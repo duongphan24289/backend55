@@ -135,6 +135,29 @@ return [
 
     'algo' => env('JWT_ALGO', 'HS256'),
 
+	/*
+    |--------------------------------------------------------------------------
+    | User Model namespace
+    |--------------------------------------------------------------------------
+    |
+    | Specify the full namespace to your User model.
+    | e.g. 'Acme\Entities\User'
+    |
+    */
+
+	'user' => 'App\Entities\User',
+	/*
+	|--------------------------------------------------------------------------
+	| User identifier
+	|--------------------------------------------------------------------------
+	|
+	| Specify a unique property of the user that will be added as the 'sub'
+	| claim of the token payload.
+	|
+	*/
+
+	'identifier' => 'id',
+
     /*
     |--------------------------------------------------------------------------
     | Required Claims
