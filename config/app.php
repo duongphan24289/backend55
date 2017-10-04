@@ -186,6 +186,11 @@ return [
          * MacroResponse Provider
          */
         App\Providers\MacroResponseProvider::class,
+
+		/*
+		 * Repository Service Provider
+		 */
+		Prettus\Repository\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
