@@ -13,9 +13,19 @@ class User extends Authenticatable implements Transformable,JWTSubject
     use TransformableTrait;
 
     protected $fillable = [
-    	'id',
-    	'name',
+		'id',
+		'name',
 		'email',
+		'password',
+		'remember_token',
+		'created_at',
+		'updated_at'
+	];
+    protected $hidden = [
+    	'password',
+		'remember_token',
+		'created_at',
+		'updated_at'
 	];
     
     protected $table = 'users';

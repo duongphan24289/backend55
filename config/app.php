@@ -191,6 +191,12 @@ return [
 		 * Repository Service Provider
 		 */
 		Prettus\Repository\Providers\RepositoryServiceProvider::class,
+		
+		/*
+		 *
+		 */
+		App\Providers\RepositoryServiceProvider::class,
+		
     ],
 
     /*

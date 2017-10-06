@@ -6,6 +6,7 @@ use Closure;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
+use Response;
 
 class JWTAuthMiddleware extends BaseMiddleware
 {
@@ -31,7 +32,7 @@ class JWTAuthMiddleware extends BaseMiddleware
             return response()->error(['User not found.'], 404);
         }
 
-        $this->events->fire('tymon.jwt.valid', $user);
+//        $this->events->fire('tymon.jwt.valid', $user);
 
         return $next($request);
 

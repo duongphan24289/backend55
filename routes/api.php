@@ -18,5 +18,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'v1', 'namespace' => 'V1'], function (){
-   Route::post('login', ['as' => 'login', 'uses' => 'LoginController@login']);
+	Route::post('login', ['as' => 'login', 'uses' => 'LoginController@login']);
+	Route::post('register',['as' => 'user.register', 'uses' => 'UserController@register']);
+	Route::group(['prefix' => 'user', 'middleware' => 'jwt-auth'], function (){
+		Route::post('update', ['as' => 'user.update', 'uses' => 'UserController@update']);
+	});
 });
