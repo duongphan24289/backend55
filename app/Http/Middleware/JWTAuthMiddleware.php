@@ -29,7 +29,7 @@ class JWTAuthMiddleware extends BaseMiddleware
             return response()->error(['Token expired.'], 444);
         }
         catch (JWTException $e){
-            return response()->error(['User not found.'], 404);
+            return response()->error(['Token is invalid.'], 404);
         }
 
 //        $this->events->fire('tymon.jwt.valid', $user);

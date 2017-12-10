@@ -15,6 +15,7 @@ class User extends Authenticatable implements Transformable,JWTSubject
     protected $fillable = [
 		'id',
 		'name',
+		'name_kana',
 		'email',
 		'password',
 		'remember_token',

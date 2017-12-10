@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\V1;
 
 use App\Repositories\UserRepository;
+use App\Rules\KatakanaRule;
+use App\Services\User as UserService;
 use App\Validators\UserValidator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,10 +19,17 @@ class UserController extends Controller
 	
 	protected $validator;
 	
-    public function __construct(UserRepository $userRepository, UserValidator $validator)
+	protected $userService;
+	
+    public function __construct(
+    	UserRepository $userRepository,
+		UserValidator $validator,
+		UserService $userService
+	)
 	{
 		$this->userRepository = $userRepository;
 		$this->validator = $validator;
+		$this->userService = $userService;
 	}
 	
 	/**
@@ -32,11 +41,8 @@ class UserController extends Controller
 	 */
 	public function register(Request $request){
  		try {
- 			$this->validator->with($request->all())->passesOrFail(ValidatorInterface::RULE_CREATE);
- 			$data = $request->all();
- 			$data['password'] = Hash::make($data['password']);
- 			$user = $this->userRepository->create($data);
-			return response()->success($user);
+ 			$this->userService->register($request);
+ 			return response()->success(true);
 		}
 		catch (ValidatorException $exception){
 			return response()->error($exception->getMessageBag(), 402);

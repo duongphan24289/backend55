@@ -23,4 +23,8 @@ Route::group(['prefix' => 'v1', 'namespace' => 'V1'], function (){
 	Route::group(['prefix' => 'user', 'middleware' => 'jwt-auth'], function (){
 		Route::post('update', ['as' => 'user.update', 'uses' => 'UserController@update']);
 	});
+	
+	Route::group(['prefix' => 'todo', 'middleware' => 'jwt-auth'], function(){
+		Route::get('/', ['as' => 'todo.lists', 'uses' => 'TodoController@index']);
+	});
 });
