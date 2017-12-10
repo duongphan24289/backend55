@@ -29,7 +29,7 @@ class LoginController extends ApiController
             if ($validator->fails()) {
                 return response()->error($validator->errors());
             }
-            if (!$token = JWTAuth::attempt($credential)) {
+            if (! $token = JWTAuth::attempt($credential)) {
                 return response()->error('Email or password is wrong', 400);
             }
 

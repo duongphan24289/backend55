@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -137,7 +136,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -196,7 +194,6 @@ return [
          *
          */
         App\Providers\RepositoryServiceProvider::class,
-
     ],
 
     /*
@@ -211,7 +208,6 @@ return [
     */
 
     'aliases' => [
-
         'App'          => Illuminate\Support\Facades\App::class,
         'Artisan'      => Illuminate\Support\Facades\Artisan::class,
         'Auth'         => Illuminate\Support\Facades\Auth::class,
@@ -248,5 +244,4 @@ return [
         'JWTAuth'      => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory'   => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
-
 ];

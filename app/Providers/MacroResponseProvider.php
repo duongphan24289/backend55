@@ -9,8 +9,6 @@ class MacroResponseProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -45,11 +43,8 @@ class MacroResponseProvider extends ServiceProvider
 
     /**
      * Register the application services.
-     *
-     * @return void
      */
     public function register()
     {
-        //
     }
 }

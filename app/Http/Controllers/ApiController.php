@@ -13,7 +13,6 @@ class ApiController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -23,7 +22,6 @@ class ApiController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -35,7 +33,6 @@ class ApiController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**
@@ -47,7 +44,6 @@ class ApiController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -59,7 +55,6 @@ class ApiController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**
@@ -72,7 +67,6 @@ class ApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**
@@ -84,6 +78,5 @@ class ApiController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }

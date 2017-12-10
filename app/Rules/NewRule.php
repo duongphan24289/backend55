@@ -8,12 +8,9 @@ class NewRule implements Rule
 {
     /**
      * Create a new rule instance.
-     *
-     * @return void
      */
     public function __construct()
     {
-        //
     }
 
     /**
@@ -26,7 +23,6 @@ class NewRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
     }
 
     /**

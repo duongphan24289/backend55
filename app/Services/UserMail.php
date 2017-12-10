@@ -17,7 +17,6 @@ class UserMail
                 $message->from('no-reply@laravel55.dev', 'Laravel 55');
                 $message->to($user->email, $user->name)->subject('Welcome');
             }
-
         );
     }
 }

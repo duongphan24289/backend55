@@ -20,7 +20,7 @@ class JWTAuthMiddleware extends BaseMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!$token = $this->auth->setRequest($request)->getToken()) {
+        if (! $token = $this->auth->setRequest($request)->getToken()) {
             return response()->error(['Token not provided'], 400);
         }
 
