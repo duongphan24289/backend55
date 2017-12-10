@@ -2,20 +2,17 @@
 
 namespace App\Repositories;
 
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\TodoRepository;
 use App\Entities\Todo;
-use App\Validators\TodoValidator;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
- * Class TodoRepositoryEloquent
- * @package namespace App\Repositories;
+ * Class TodoRepositoryEloquent.
  */
 class TodoRepositoryEloquent extends BaseRepository implements TodoRepository
 {
     /**
-     * Specify Model class name
+     * Specify Model class name.
      *
      * @return string
      */
@@ -24,10 +21,8 @@ class TodoRepositoryEloquent extends BaseRepository implements TodoRepository
         return Todo::class;
     }
 
-    
-
     /**
-     * Boot up the repository, pushing criteria
+     * Boot up the repository, pushing criteria.
      */
     public function boot()
     {

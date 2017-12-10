@@ -3,38 +3,37 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Response;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
-use Response;
 
 class JWTAuthMiddleware extends BaseMiddleware
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
-        if ( ! $token = $this->auth->setRequest($request)->getToken()) {
+        if (!$token = $this->auth->setRequest($request)->getToken()) {
             return response()->error(['Token not provided'], 400);
         }
+
         try {
             $user = $this->auth->authenticate($token);
-        }
-        catch (TokenExpiredException $e){
+        } catch (TokenExpiredException $e) {
             return response()->error(['Token expired.'], 444);
-        }
-        catch (JWTException $e){
+        } catch (JWTException $e) {
             return response()->error(['Token is invalid.'], 404);
         }
 
 //        $this->events->fire('tymon.jwt.valid', $user);
 
         return $next($request);
-
     }
 }
