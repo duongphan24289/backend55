@@ -5,10 +5,8 @@ namespace App\Repositories;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
- * Interface TodoRepository
- * @package namespace App\Repositories;
+ * Interface TodoRepository.
  */
 interface TodoRepository extends RepositoryInterface
 {
-
 }

@@ -135,7 +135,7 @@ return [
 
     'algo' => env('JWT_ALGO', 'HS256'),
 
-	/*
+    /*
     |--------------------------------------------------------------------------
     | User Model namespace
     |--------------------------------------------------------------------------
@@ -145,18 +145,18 @@ return [
     |
     */
 
-	'user' => 'App\Entities\User',
-	/*
-	|--------------------------------------------------------------------------
-	| User identifier
-	|--------------------------------------------------------------------------
-	|
-	| Specify a unique property of the user that will be added as the 'sub'
-	| claim of the token payload.
-	|
-	*/
+    'user' => 'App\Entities\User',
+    /*
+    |--------------------------------------------------------------------------
+    | User identifier
+    |--------------------------------------------------------------------------
+    |
+    | Specify a unique property of the user that will be added as the 'sub'
+    | claim of the token payload.
+    |
+    */
 
-	'identifier' => 'id',
+    'identifier' => 'id',
 
     /*
     |--------------------------------------------------------------------------

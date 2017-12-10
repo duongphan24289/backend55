@@ -14,7 +14,7 @@ class MacroResponseProvider extends ServiceProvider
      */
     public function boot()
     {
-        /**
+        /*
          * Response success
          */
         Response::macro('success', function ($data, $status = 0) {
@@ -23,12 +23,12 @@ class MacroResponseProvider extends ServiceProvider
                 'data'   => $data,
                 'error'  => [
                     'code'    => $status,
-                    'message' => []
-                ]
+                    'message' => [],
+                ],
             ]);
         });
 
-        /**
+        /*
          * Response errors
          */
         Response::macro('error', function ($message, $status = 400, $data = null) {
@@ -37,8 +37,8 @@ class MacroResponseProvider extends ServiceProvider
                 'data'   => $data,
                 'error'  => [
                     'code'    => $status,
-                    'message' => $message
-                ]
+                    'message' => $message,
+                ],
             ]);
         });
     }
