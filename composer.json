@@ -9,8 +9,10 @@
         "doctrine/instantiator": "^1.0.2",
         "fideloper/proxy": "~3.3",
         "friendsofphp/php-cs-fixer": "^2.9",
+        "intervention/image": "^2.4",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "league/flysystem-aws-s3-v3": "^1.0",
         "prettus/l5-repository": "^2.6",
         "tymon/jwt-auth": "dev-develop"
     },

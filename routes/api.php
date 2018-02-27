@@ -27,4 +27,10 @@ Route::group(['prefix' => 'v1', 'namespace' => 'V1'], function () {
     Route::group(['prefix' => 'todo', 'middleware' => 'jwt-auth'], function () {
         Route::get('/', ['as' => 'todo.lists', 'uses' => 'TodoController@index']);
     });
+
+    Route::post('upload', ['as' => 'upload', 'uses' => 'UploadController@upload']);
+
+    Route::group(['prefix' => 's3-config'], function(){
+       Route::get('/', ['as' => 'helper.s3-config' , 'uses' => 'HelperController@getS3Config']);
+    });
 });

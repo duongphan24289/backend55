@@ -55,10 +55,18 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key'    => env('AWS_KEY'),
-            'secret' => env('AWS_SECRET'),
-            'region' => env('AWS_REGION'),
-            'bucket' => env('AWS_BUCKET'),
+            'key'    => env('AWS_S3_KEY'),
+            'secret' => env('AWS_S3_SECRET'),
+            'region' => env('AWS_S3_REGION'),
+            'bucket' => env('AWS_S3_BUCKET'),
+            'access' => env(
+                'AWS_S3_ALLOW_ACCESS',
+                'http://169.254.169.254/latest/meta-data/iam/security-credentials/AllowEc2AccessS3BucketWeb'
+            ),
+            // options
+            'token' => env('AWS_S3_TOKEN'),
+            'expiration' => env('AWS_S3_EXPIRATION'),
+            'time_cache' => env('AWS_S3_TIME_CACHE', 180),
         ],
     ],
 ];
